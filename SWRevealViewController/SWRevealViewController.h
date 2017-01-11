@@ -190,15 +190,15 @@ typedef NS_ENUM(NSInteger, SWRevealToggleAnimationType)
 - (id)initWithRearViewController:(UIViewController *)rearViewController frontViewController:(UIViewController *)frontViewController;
 
 // Rear view controller, can be nil if not used
-@property (nonatomic) UIViewController *rearViewController;
+@property (nonatomic, weak) UIViewController *rearViewController;
 - (void)setRearViewController:(UIViewController *)rearViewController animated:(BOOL)animated;
 
 // Optional right view controller, can be nil if not used
-@property (nonatomic) UIViewController *rightViewController;
+@property (nonatomic, weak) UIViewController *rightViewController;
 - (void)setRightViewController:(UIViewController *)rightViewController animated:(BOOL)animated;
 
 // Front view controller, can be nil on initialization but must be supplied by the time the view is loaded
-@property (nonatomic) UIViewController *frontViewController;
+@property (nonatomic, weak) UIViewController *frontViewController;
 - (void)setFrontViewController:(UIViewController *)frontViewController animated:(BOOL)animated;
 
 // Sets the frontViewController using a default set of chained animations consisting on moving the
@@ -295,7 +295,7 @@ typedef NS_ENUM(NSInteger, SWRevealToggleAnimationType)
 @property (nonatomic) CGFloat frontViewShadowOpacity;
 
 // Defines the front view's shadow color, default is blackColor
-@property (nonatomic) UIColor *frontViewShadowColor;
+@property (nonatomic, strong) UIColor *frontViewShadowColor;
 
 // Defines whether the controller should clip subviews to its view bounds. Default is NO.
 // Set this to YES when you are presenting this controller as a non full-screen child of a
